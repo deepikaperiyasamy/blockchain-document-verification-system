@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuTrust | Upload Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.2/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+        <div class="logo">🔐 DocuTrust</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="upload.html" class="active">Upload</a>
+            <a href="verify.html">Verify</a>
+            <a href="admin.html">Admin</a>
+            <!-- <button id="connectWalletBtn" class="btn-wallet">Connect Wallet</button> -->
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="form-container glass-panel">
+            <h2>Secure Document Upload</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Upload your document to generate a unique SHA-256 hash and anchor it to the Ethereum blockchain.</p>
+            
+            <div class="drop-zone" id="uploadDropZone">
+                <span class="drop-zone-icon">📄</span>
+                <p>Drag and drop your file here or <span style="color: var(--primary);">browse</span></p>
+                <input type="file" id="uploadFileInput" class="file-input">
+                <p id="uploadFileName" style="margin-top: 1rem; font-weight: 600;"></p>
+            </div>
+
+            <button id="uploadBtn" class="btn btn-primary" style="width: 100%; display: none;">Upload & Secure to Blockchain</button>
+            <div class="loader" id="uploadLoader" style="margin-top: 1rem;"></div>
+
+            <div class="result-box" id="uploadResult">
+                <h3 style="margin-bottom: 0.5rem;" id="uploadResultTitle">✅ Document Secured</h3>
+                <p><strong>Hash:</strong> <span class="hash-cell" id="uploadHashValue">...</span></p>
+                <p><strong>Tx Hash:</strong> <span class="hash-cell" id="uploadTxHash" style="color: var(--secondary);">...</span></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuTrust | Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.2/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+        <div class="logo">🔐 DocuTrust</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="upload.html">Upload</a>
+            <a href="verify.html">Verify</a>
+            <a href="admin.html" class="active">Admin</a>
+            <!-- <button id="connectWalletBtn" class="btn-wallet">Connect Wallet</button> -->
+        </div>
+    </nav>
+
+    <main class="hero" style="align-items: flex-start; padding-top: 5rem;">
+        <div class="glass-panel" style="width: 100%; max-width: 1000px;">
+            <h2>Admin Dashboard</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Overview of all documents verified on the network.</p>
+            <button id="refreshAdminBtn" class="btn btn-secondary">Refresh Data</button>
+            <div class="loader" id="adminLoader" style="margin-top: 1rem; display: none;"></div>
+            
+            <div class="admin-table-container">
+                <table id="adminTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>File Name</th>
+                            <th>Hash</th>
+                            <th>Date / Time (UTC)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody">
+                        <!-- Rows populated by app.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

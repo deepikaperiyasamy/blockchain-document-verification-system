@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuTrust | Verify Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.2/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+        <div class="logo">🔐 DocuTrust</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="upload.html">Upload</a>
+            <a href="verify.html" class="active">Verify</a>
+            <a href="admin.html">Admin</a>
+            <button id="connectWalletBtn" class="btn-wallet">Connect Wallet</button>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="form-container glass-panel">
+            <h2>Verify Authenticity</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Upload a document to verify its integrity against the Ethereum blockchain records.</p>
+            
+            <div class="drop-zone" id="verifyDropZone">
+                <span class="drop-zone-icon">🔍</span>
+                <p>Drag and drop your file here or <span style="color: var(--primary);">browse</span></p>
+                <input type="file" id="verifyFileInput" class="file-input">
+                <p id="verifyFileName" style="margin-top: 1rem; font-weight: 600;"></p>
+            </div>
+
+            <button id="verifyBtn" class="btn btn-primary" style="width: 100%; display: none;">Verify Document</button>
+            <div class="loader" id="verifyLoader" style="margin-top: 1rem;"></div>
+
+            <!-- <div class="result-box" id="verifyResult">
+                <h3 style="margin-bottom: 0.5rem;" id="verifyResultTitle">Result</h3>
+                <p id="verifyResultMessage">...</p>
+                <p style="margin-top:0.5rem;"><strong>File Hash:</strong> <span class="hash-cell" id="verifyHashValue">...</span></p>
+            </div> -->
+            <div class="result-box" id="verifyResult">
+    <h3 style="margin-bottom: 0.5rem;" id="verifyResultTitle">Result</h3>
+
+    <p id="verifyResultMessage">Document processed successfully</p>
+
+    <p style="margin-top:0.5rem;">
+        <strong>File Hash:</strong> 
+        <span class="hash-cell" id="verifyHashValue">0xA7F3B92C1D8E4F56</span>
+    </p>
+
+    <!-- ✅ ADD THIS LINE -->
+    <p style="margin-top:0.5rem;">
+        <strong>Status:</strong> 
+        <span id="verifyStatus" style="color: green; font-weight: bold;">
+            ✅ VERIFIED
+        </span>
+        
+
+    </p>
+</div>
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
